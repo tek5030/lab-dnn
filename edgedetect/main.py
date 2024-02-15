@@ -57,7 +57,7 @@ if __name__ == '__main__':
     cv.namedWindow('Input', cv.WINDOW_NORMAL)
     cv.namedWindow(kWinName, cv.WINDOW_NORMAL)
 
-    cap = cv.VideoCapture(args.input if args.input else 4)
+    cap = cv.VideoCapture(args.input if args.input else 0)
     while cv.waitKey(1) < 0:
         hasFrame, frame = cap.read()
         if not hasFrame:
