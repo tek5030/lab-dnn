@@ -50,7 +50,7 @@ Please start the lab by going to the [first step].
 
 [first step]: lab-guide/1-get-an-overview.md
 [second step]: lab-guide/2-model-zoo.md
-[third step]: lab-guide/3-opencv-tutorials.md
+[third step]: lab-guide/3-opencv-tutorials.ipynb
 [last step]: lab-guide/4-further-work.md
 
 ---

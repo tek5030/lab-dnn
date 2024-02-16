@@ -5,9 +5,11 @@ Now, we have become familiar with the dnn module of OpenCV, and you are ready fo
 One suggestion is to feed the output of one network as input to a new network.
 [face_recognition_sface] from the OpenCV model zoo is an example of this.
 
-You can also dive into the [TEK5030 PyTorch-tutorial from last year]!
+We have added a set of models that we found to be missing in the OpenCV model zoo: [Depth estimation](https://github.com/tek5030/lab-dnn/tree/main/depth_estimation), [Human Pose Estimation](https://github.com/tek5030/lab-dnn/tree/main/human_pose_estimation) and [Keypoint detection](https://github.com/tek5030/lab-dnn/tree/main/keypoints).
 
+These examples are already completed, but can be extended only limited to your imagination.
 
+You can also dive into the [TEK5030 PyTorch-tutorial]!
 
 Here are some suggestions:
 

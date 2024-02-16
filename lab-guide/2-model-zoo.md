@@ -39,4 +39,4 @@ Continue to explore the models and run the examples. If you need suggestions, yo
 
 What can we do with the output from these models? 
 
-After playing around for a bit, continue to the [next step](3-opencv-tutorials.md).
+After playing around for a bit, continue to the [next step](3-opencv-tutorials.ipynb).
