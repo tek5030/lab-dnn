@@ -27,4 +27,4 @@ That's it for today! Good luck, and have a nice weekend : )
 [dnn/samples]: https://github.com/opencv/opencv/tree/4.x/samples/dnn
 [tutorials]: https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html
 
-[TEK5030 PyTorch-tutorial from last year]: https://github.com/sigmunjr/TEK5030_deep_learning_torch
+[TEK5030 PyTorch-tutorial]: https://github.com/sigmunjr/TEK5030_deep_learning_torch
