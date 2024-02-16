@@ -2,3 +2,8 @@ opencv_zoo
 *.caffemodel
 *.onnx
 *.prototxt
+.venv
+lab-guide/models.yml
+lab-guide/object_detection.py
+lab-guide/download_models.py
+__pycache__

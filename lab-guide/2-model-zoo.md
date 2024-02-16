@@ -13,6 +13,7 @@ If you need a push to get started, let us try [object detection with nanodet](..
 - Press the <!-- play --> &#9658; symbol on line 100 to start the application.
 
   <img src="figures/pycharm-play.png"/>
+
 - If you have multiple cameras plugged into your computer, you might have to change the `deviceId` (camera index) on line 161.
 - Point the camera at different objects around you. What kind of objects are detected?
   Can the detector be fooled?
