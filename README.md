@@ -15,6 +15,11 @@ Make sure to check the [prerequisites](#install-git-lfs) before getting started.
 Initialize the Python environment
 
 ```bash
+# Clone the lab
+git clone https://github.com/tek5030/lab-dnn.git
+
+cd lab-dnn
+
 python3 -m venv venv
 source venv/bin/activate
 pip install -U pip
@@ -25,11 +30,6 @@ python -m ipykernel install --user --name=venv
 **Then**, download the `opencv_zoo` within the project directory.
 
 ```bash
-# Clone the lab
-git clone https://github.com/tek5030/lab-dnn.git
-
-cd lab-dnn
-
 # Pull the model zoo
 git clone --depth 1 https://github.com/opencv/opencv_zoo && cd opencv_zoo
 git lfs install
