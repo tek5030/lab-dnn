@@ -25,8 +25,6 @@ def main():
             cv.waitKey()
             break
 
-        #frame = frame / 255.0
-        # frame = transform({"image": frame})["image"]
         input_img = transform(images=cv.cvtColor(frame, cv.COLOR_BGR2RGB), return_tensors='pt')['pixel_values'].to(DEVICE)
 
         with torch.no_grad():
@@ -36,9 +34,10 @@ def main():
         show_prediction = scale_for_cv(prediction.cpu().numpy())
         cv.imshow('Input', frame)
         cv.imshow('Depth', show_prediction)
-
+    cap.release()
+    cv.destroyAllWindows()
 
 
 
 if __name__ == '__main__':
-    main_v2()
+    main()
