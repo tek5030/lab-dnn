@@ -24,3 +24,7 @@ Install additional dependencies with:
 Run main on webcam id=0
 
     python main.py
+
+You can then type in things to search for in the images, where each thing must be lower-case and end with a ".". E.g.:
+
+    Enter bounding box search prompt: person. cup. whitebord.
