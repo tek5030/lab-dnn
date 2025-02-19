@@ -1,12 +1,7 @@
-import argparse
-
 import torch
+from transformers import AutoImageProcessor, AutoModelForDepthEstimation
 
-from depth_anything.dpt import DepthAnything
 import cv2 as cv
-
-from depth_estimation.depth_anything.util.transform import get_transform
-
 
 def scale_for_cv(image):
     image -= image.min()
@@ -14,10 +9,14 @@ def scale_for_cv(image):
     image *= 255
     return image.astype('uint8')
 
-def main(args):
+def main():
     DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
-    model = DepthAnything.from_pretrained(f"LiheYoung/depth_anything_{args.encoder}14").to(DEVICE).eval()
-    transform = get_transform()
+    # transform = AutoImageProcessor.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf")
+    # model = AutoModelForDepthEstimation.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Small-hf").to(DEVICE)
+    transform = AutoImageProcessor.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Base-hf")
+    model = AutoModelForDepthEstimation.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Base-hf").to(DEVICE)
+    # transform = AutoImageProcessor.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Large-hf")
+    # model = AutoModelForDepthEstimation.from_pretrained("depth-anything/Depth-Anything-V2-Metric-Indoor-Large-hf").to(DEVICE)
 
     cap = cv.VideoCapture(0)
     while cv.waitKey(1) < 0:
@@ -26,27 +25,20 @@ def main(args):
             cv.waitKey()
             break
 
-        frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+        #frame = frame / 255.0
+        # frame = transform({"image": frame})["image"]
+        input_img = transform(images=cv.cvtColor(frame, cv.COLOR_BGR2RGB), return_tensors='pt')['pixel_values'].to(DEVICE)
 
-        frame = frame / 255.0
-        frame = transform({"image": frame})["image"]
-        frame = torch.from_numpy(frame).float().to(DEVICE)
-        frame = frame[None, ...]
         with torch.no_grad():
-            prediction = model(frame)
-        prediction = prediction[0].cpu().numpy()
-        prediction = scale_for_cv(prediction)
-        cv.imshow('Input', cv.cvtColor(frame[0].cpu().numpy().transpose(1, 2, 0), cv.COLOR_RGB2BGR))
-        cv.imshow('Depth', prediction)
+            outputs = model(input_img)
+            prediction = outputs.predicted_depth[0]
+        print(prediction.min().item())
+        show_prediction = scale_for_cv(prediction.cpu().numpy())
+        cv.imshow('Input', frame)
+        cv.imshow('Depth', show_prediction)
+
 
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--encoder",
-        default="vits",
-        type=str,
-        choices=["vits", "vitb", "vitl"],
-    )
-    main(args=parser.parse_args())
+    main_v2()
