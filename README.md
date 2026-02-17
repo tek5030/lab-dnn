@@ -53,7 +53,7 @@ python -m ipykernel install --user --name=venv
 
 ```bash
 # Pull the model zoo
-git clone --depth 1 https://github.com/opencv/opencv_zoo && cd opencv_zoo
+git clone --depth 1 https://huggingface.co/opencv/opencv_zoo && cd opencv_zoo
 git lfs install
 git lfs pull
 ```
@@ -61,19 +61,26 @@ git lfs pull
 **Open** the project in PyCharm.
 If you are uncertain about how this is done, please take a look at [the intro lab].
 
-The lab is carried out by following these steps:
+## Practical Neural Network examples
+We added some fun examples that use techniques that are relevant for the course. 
+They should be able to run with the environment set up in the previous step.
+It's anything to complete, but you can run the main.py files, and potentially play around with the code.
 
-1. [Get practical experience with state-of-the-art NNs][practical step]
-2. [Get an overview][first step]
-3. [Play around with examples from the OpenCV model zoo][second step]
-4. [Play around with examples from the OpenCV dnn tutorials][third step]
-5. [Further work][last step]
-
-**It is highly recommended** to start with step 2 to get some hands-on experience with modern neural networks before diving into the details of the OpenCV model zoo. The projects are:
 - [Depth Estimation](./depth_estimation/README.md)
 - [Open-World Detection](./openworld_detection/README.md)
 - [Keypoint Detection](./keypoints/README.md)
 - [Human Pose Estimation](./human_pose_estimation/README.md)
+
+
+## OpenCV model zoo
+
+The lab is carried out by following these steps:
+
+1. [Get an overview][first step]
+2. [Play around with examples from the OpenCV model zoo][second step]
+3. [Play around with examples from the OpenCV dnn tutorials][third step]
+4. [Further work][last step]
+
 
 Please start the lab by going to the [first step].
 
