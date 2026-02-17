@@ -1,0 +1,18 @@
+[project]
+name = "lab-dnn"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "ipykernel>=7.2.0",
+    "jupyter>=1.1.1",
+    "opencv-python>=4.13.0.92",
+    "pillow>=12.1.1",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "torch>=2.10.0",
+    "torchvision>=0.25.0",
+    "transformers>=5.2.0",
+    "ultralytics>=8.4.14",
+]
