@@ -5,7 +5,7 @@ Now, we have become familiar with the dnn module of OpenCV, and you are ready fo
 One suggestion is to feed the output of one network as input to a new network.
 [face_recognition_sface] from the OpenCV model zoo is an example of this.
 
-We have added a set of models that we found to be missing in the OpenCV model zoo: [Depth estimation](https://github.com/tek5030/lab-dnn/tree/main/depth_estimation), [Human Pose Estimation](https://github.com/tek5030/lab-dnn/tree/main/human_pose_estimation), [Open World detection](https://github.com/tek5030/lab-dnn/tree/main/openworld_detection) and [Keypoint detection](https://github.com/tek5030/lab-dnn/tree/main/keypoints).
+We have added a set of models that we found to be missing in the OpenCV model zoo: [Depth estimation](../depth_estimation/README.md), [Human Pose Estimation](../human_pose_estimation/README.md), [Open World detection](../openworld_detection/README.md) and [Keypoint detection](../keypoints/README.md).
 
 These examples are already completed, but can be extended only limited to your imagination.
 
@@ -22,7 +22,7 @@ That's it for today! Good luck, and have a nice weekend : )
 
 
 
-[face_recognition_sface]: https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface
+[face_recognition_sface]: ../opencv_zoo/models/face_recognition_sface/README.md
 
 [dnn/samples]: https://github.com/opencv/opencv/tree/4.x/samples/dnn
 [tutorials]: https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html

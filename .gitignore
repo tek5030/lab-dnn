@@ -7,3 +7,10 @@ lab-guide/models.yml
 lab-guide/object_detection.py
 lab-guide/download_models.py
 __pycache__
+.idea
+.vscode
+.python-version
+uv.lock
+*.lock
+*.pt
+*.ts

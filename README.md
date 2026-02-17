@@ -12,7 +12,29 @@ Make sure to check the [prerequisites](#install-git-lfs) before getting started.
 
 **Start** by cloning this repository on your machine.
 
-Initialize the Python environment
+Initialize the Python environment using [uv](https://github.com/astral-sh/uv).
+
+First, install uv:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+Then set up the project:
+
+```bash
+# Clone the lab
+git clone https://github.com/tek5030/lab-dnn.git
+
+cd lab-dnn
+
+# Install dependencies
+uv sync
+
+# Activate the environment
+source .venv/bin/activate
+```
+
+**Alternatively**, using pip:
 
 ```bash
 # Clone the lab
@@ -31,13 +53,26 @@ python -m ipykernel install --user --name=venv
 
 ```bash
 # Pull the model zoo
-git clone --depth 1 https://github.com/opencv/opencv_zoo && cd opencv_zoo
+git clone --depth 1 https://huggingface.co/opencv/opencv_zoo && cd opencv_zoo
 git lfs install
 git lfs pull
 ```
 
 **Open** the project in PyCharm.
 If you are uncertain about how this is done, please take a look at [the intro lab].
+
+## Practical Neural Network examples
+We added some fun examples that use techniques that are relevant for the course. 
+They should be able to run with the environment set up in the previous step.
+It's anything to complete, but you can run the main.py files, and potentially play around with the code.
+
+- [Depth Estimation](./depth_estimation/README.md)
+- [Open-World Detection](./openworld_detection/README.md)
+- [Keypoint Detection](./keypoints/README.md)
+- [Human Pose Estimation](./human_pose_estimation/README.md)
+
+
+## OpenCV model zoo
 
 The lab is carried out by following these steps:
 
@@ -46,8 +81,10 @@ The lab is carried out by following these steps:
 3. [Play around with examples from the OpenCV dnn tutorials][third step]
 4. [Further work][last step]
 
+
 Please start the lab by going to the [first step].
 
+[practical step]: #
 [first step]: lab-guide/1-get-an-overview.md
 [second step]: lab-guide/2-model-zoo.md
 [third step]: lab-guide/3-opencv-tutorials.ipynb

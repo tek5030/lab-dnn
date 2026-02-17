@@ -9,13 +9,14 @@ The depth is not given in meters, but in a relative scale. This means that the n
 To estimate metric depth you can use the additional code provided in the [Depth-Anything/metric_depth](https://github.com/LiheYoung/Depth-Anything/tree/main).
 
 ## Prerequisites
+Make sure `uv` is installed and the root environment is synced.
 
-```
-pip install -r requirements.txt
+```bash
+uv sync --all-groups
 ```
 
 ## Usage
 
-```
-python main.py --encoder vits
+```bash
+uv run main.py --encoder vits
 ```

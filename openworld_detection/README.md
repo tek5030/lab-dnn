@@ -17,14 +17,18 @@ By leveraging natural language prompts alongside visual data, Grounding DINO "gr
 
 ## Running
 
-Install additional dependencies with:
+Make sure `uv` is installed and the root environment is synced.
 
-    pip install -r requirements.txt
+```bash
+uv sync
+```
 
 Run main on webcam id=0
 
-    python main.py
+```bash
+uv run main.py
+```
 
-You can then type in things to search for in the images, where each thing must be lower-case and end with a ".". E.g.:
+You can then type in things to search for in the images, where each thing must be lower-case and separated by a comma. E.g.:
 
-    Enter bounding box search prompt: person. cup. whitebord.
+    Enter bounding box search prompt: person, cup, whiteboard

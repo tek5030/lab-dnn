@@ -75,7 +75,20 @@ def main(args):
 
     cap = cv.VideoCapture(0)
     frame_prev = None
-    while cv.waitKey(1) < 0:
+    frame_skip = 5
+    while True:
+        key = cv.waitKey(1)
+        if key != -1:
+            key = key & 0xFF
+            if key == 27 or key == ord('q'):
+                break
+            elif key == 81 or key == ord('a'):  # Left arrow or 'a'
+                frame_skip = max(0, frame_skip - 1)
+            elif key == 83 or key == ord('d'):  # Right arrow or 'd'
+                frame_skip += 1
+
+        for i in range(frame_skip):
+            cap.grab()
         hasFrame, frame = cap.read()
         if not hasFrame:
             cv.waitKey()
@@ -98,6 +111,10 @@ def main(args):
                 matchColor=(0, 155, 0),
                 singlePointColor=(0, 255, 255),
                 flags=0)
+            
+            info_text = f"Skip: {frame_skip} | Frame Diff: {frame_skip + 1}"
+            cv.putText(show_matched, info_text, (10, 30), cv.FONT_HERSHEY_SIMPLEX, 
+                       1, (0, 0, 255), 2, cv.LINE_AA)
             cv.imshow('Matches', show_matched)
         frame_prev = frame_cur
 
