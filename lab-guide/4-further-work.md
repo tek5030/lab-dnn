@@ -22,7 +22,7 @@ That's it for today! Good luck, and have a nice weekend : )
 
 
 
-[face_recognition_sface]: https://github.com/opencv/opencv_zoo/tree/main/models/face_recognition_sface
+[face_recognition_sface]: ../opencv_zoo/models/face_recognition_sface/README.md
 
 [dnn/samples]: https://github.com/opencv/opencv/tree/4.x/samples/dnn
 [tutorials]: https://docs.opencv.org/4.x/d2/d58/tutorial_table_of_content_dnn.html
