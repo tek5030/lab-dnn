@@ -10,12 +10,14 @@ We also provide a demo with sift features, for comparison.
 
 ## Prerequisites
 
-```
-pip install -r requirements.txt
+Make sure `uv` is installed and the root environment is synced.
+
+```bash
+uv sync
 ```
 
 ## Usage
 
-```
-python main.py --matcher dnn
+```bash
+uv run main.py --matcher dnn
 ```

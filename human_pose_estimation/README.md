@@ -10,12 +10,14 @@ For more advanced models, you can check out the [mmpose](https://mmpose.readthed
 
 ## Prerequisites
 
-```
-pip install -r requirements.txt
+Make sure `uv` is installed and the root environment is synced.
+
+```bash
+uv sync
 ```
 
 ## Usage
 
-```
-python main.py
+```bash
+uv run main.py
 ```
