@@ -93,7 +93,6 @@ Please start the lab by going to the [first step].
 ---
 
 ## Prerequisites
-If you are on a lab computer, you are all set.
 
 If you are on Ubuntu and haven't completed [the intro lab], the following should be sufficient _for this lab_.
 
